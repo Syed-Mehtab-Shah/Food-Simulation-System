@@ -1,0 +1,792 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+/* =============================================================================
+   NAVIGATION BAR
+   ============================================================================= */
+
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * Brand logo in navigation
+ * Bold typography for brand recognition
+ */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white !important;
+}
+
+/**
+ * Navigation links styling
+ * Semi-transparent white with smooth transitions
+ */
+.nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/**
+ * Navigation link hover effect
+ * Full opacity white with subtle lift animation
+ */
+.nav-link:hover {
+    color: white !important;
+    transform: translateY(-1px);
+}
+
+/* =============================================================================
+   DASHBOARD CARDS
+   ============================================================================= */
+
+/**
+ * Main dashboard card component
+ * White background with rounded corners and shadow effects
+ */
+.dashboard-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+/**
+ * Dashboard card hover effect
+ * Lift animation with enhanced shadow for interactivity
+ */
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/**
+ * Card header styling
+ * Orange gradient background matching the brand colors
+ */
+.card-header {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: white;
+    border-radius: 15px 15px 0 0 !important;
+    border: none;
+    padding: 1.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* =============================================================================
+   BUTTON COMPONENTS
+   ============================================================================= */
+
+/**
+ * Primary button styling
+ * Blue gradient matching the navigation theme
+ */
+.btn-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/**
+ * Primary button hover effect
+ * Reverses gradient with lift animation and shadow
+ */
+.btn-primary:hover {
+    background: linear-gradient(135deg, #764ba2, #667eea);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+/**
+ * Success button styling
+ * Green gradient for positive actions
+ */
+.btn-success {
+    background: linear-gradient(135deg, #00b894, #00a085);
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+/**
+ * Success button hover effect
+ * Reverses green gradient with lift animation
+ */
+.btn-success:hover {
+    background: linear-gradient(135deg, #00a085, #00b894);
+    transform: translateY(-2px);
+}
+
+/**
+ * Warning button styling
+ * Orange gradient for caution actions
+ */
+.btn-warning {
+    background: linear-gradient(135deg, #fdcb6e, #e17055);
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+/**
+ * Warning button hover effect
+ * Reverses orange gradient with lift animation
+ */
+.btn-warning:hover {
+    background: linear-gradient(135deg, #e17055, #fdcb6e);
+    transform: translateY(-2px);
+}
+
+/**
+ * Danger button styling
+ * Red gradient for destructive actions
+ */
+.btn-danger {
+    background: linear-gradient(135deg, #e17055, #d63031);
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+/**
+ * Danger button hover effect
+ * Reverses red gradient with lift animation
+ */
+.btn-danger:hover {
+    background: linear-gradient(135deg, #d63031, #e17055);
+    transform: translateY(-2px);
+}
+
+/* =============================================================================
+   FORM CONTROLS
+   ============================================================================= */
+
+/**
+ * Form input and select styling
+ * Rounded corners with smooth focus transitions
+ */
+.form-control, .form-select {
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+/**
+ * Form control focus state
+ * Blue accent color with shadow effect
+ */
+.form-control:focus, .form-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* =============================================================================
+   DATA TABLES
+   ============================================================================= */
+
+/**
+ * Main table styling
+ * Rounded corners with subtle shadow
+ */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/**
+ * Table header styling
+ * Blue gradient background with white text
+ */
+.table thead th {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    font-weight: 600;
+    padding: 15px;
+}
+
+/**
+ * Table row transition effect
+ * Smooth transitions for hover interactions
+ */
+.table tbody tr {
+    transition: all 0.3s ease;
+}
+
+/**
+ * Table row hover effect
+ * Light background with subtle scale animation
+ */
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.01);
+}
+
+/**
+ * Table cell styling
+ * Consistent padding and border colors
+ */
+.table tbody td {
+    padding: 15px;
+    vertical-align: middle;
+    border-color: #e9ecef;
+}
+
+/* =============================================================================
+   STATISTICS CARDS
+   ============================================================================= */
+
+/**
+ * Statistics display card
+ * Blue gradient background for highlighting key metrics
+ */
+.stats-card {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+/**
+ * Statistics card hover effect
+ * Lift animation for interactivity
+ */
+.stats-card:hover {
+    transform: translateY(-5px);
+}
+
+/**
+ * Large number display in statistics
+ * Bold, large font for key metrics
+ */
+.stats-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/**
+ * Statistics label text
+ * Slightly transparent for hierarchy
+ */
+.stats-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* =============================================================================
+   MODAL COMPONENTS
+   ============================================================================= */
+
+/**
+ * Modal dialog styling
+ * Rounded corners with enhanced shadow
+ */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/**
+ * Modal header styling
+ * Blue gradient matching the theme
+ */
+.modal-header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    border: none;
+}
+
+/* =============================================================================
+   BADGES AND STATUS INDICATORS
+   ============================================================================= */
+
+/**
+ * Badge component styling
+ * Rounded pills with consistent padding
+ */
+.badge {
+    border-radius: 20px;
+    padding: 8px 12px;
+    font-weight: 500;
+}
+
+/**
+ * Star rating display
+ * Golden color for rating stars
+ */
+.rating-stars {
+    color: #ffd700;
+}
+
+/**
+ * Order status indicator base
+ * Consistent styling for all status types
+ */
+.order-status {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/**
+ * Pending order status
+ * Yellow background for pending orders
+ */
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/**
+ * Processing order status
+ * Blue background for orders being processed
+ */
+.status-processing {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+/**
+ * Delivered order status
+ * Green background for completed orders
+ */
+.status-delivered {
+    background: #d4edda;
+    color: #155724;
+}
+
+/* =============================================================================
+   FLOATING ACTION BUTTONS
+   ============================================================================= */
+
+/**
+ * Quick actions container
+ * Fixed positioning for floating action buttons
+ */
+.quick-actions {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+/**
+ * Floating action button styling
+ * Circular orange gradient buttons with shadow
+ */
+.fab-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/**
+ * Floating action button hover effect
+ * Scale animation with enhanced shadow
+ */
+.fab-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(238, 90, 36, 0.4);
+    color: white;
+}
+
+/* =============================================================================
+   ANIMATIONS
+   ============================================================================= */
+
+/**
+ * Fade-in animation keyframes
+ * Smooth entrance animation for dynamic content
+ */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/**
+ * Fade-in animation class
+ * Applies smooth entrance animation
+ */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* =============================================================================
+   SECTION HEADERS
+   ============================================================================= */
+
+/**
+ * Section title styling
+ * Consistent headers with bottom border accent
+ */
+.section-title {
+    color: #2d3436;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #667eea;
+    display: inline-block;
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN - MOBILE AND TABLET OPTIMIZATIONS
+   ============================================================================= */
+
+/**
+ * Large tablets and small desktops (1024px and below)
+ * Adjusts spacing and sizing for medium screens
+ */
+@media (max-width: 1024px) {
+    .dashboard-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .stats-card {
+        padding: 1.5rem;
+    }
+    
+    .stats-number {
+        font-size: 2rem;
+    }
+    
+    .table thead th,
+    .table tbody td {
+        padding: 12px;
+    }
+}
+
+/**
+ * Tablets (768px and below)
+ * Optimizes layout for tablet portrait and landscape modes
+ */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .dashboard-card {
+        margin-bottom: 1rem;
+        border-radius: 12px;
+    }
+    
+    .card-header {
+        padding: 1rem;
+        font-size: 1rem;
+        border-radius: 12px 12px 0 0 !important;
+    }
+    
+    .stats-card {
+        padding: 1.2rem;
+        margin-bottom: 1rem;
+        border-radius: 12px;
+    }
+    
+    .stats-number {
+        font-size: 1.8rem;
+    }
+    
+    .stats-label {
+        font-size: 0.9rem;
+    }
+    
+    .table {
+        font-size: 0.9rem;
+        border-radius: 8px;
+    }
+    
+    .table thead th,
+    .table tbody td {
+        padding: 10px 8px;
+    }
+    
+    .btn-primary,
+    .btn-success {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+    }
+    
+    .modal-content {
+        border-radius: 12px;
+    }
+    
+    .modal-header {
+        border-radius: 12px 12px 0 0;
+        padding: 1rem;
+    }
+    
+    .badge {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .fab-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+/**
+ * Mobile devices (480px and below)
+ * Optimizes for small smartphone screens
+ */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .dashboard-card {
+        margin: 0.5rem 0;
+        border-radius: 10px;
+    }
+    
+    .card-header {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+        border-radius: 10px 10px 0 0 !important;
+    }
+    
+    .stats-card {
+        padding: 1rem;
+        margin-bottom: 0.8rem;
+        border-radius: 10px;
+    }
+    
+    .stats-number {
+        font-size: 1.5rem;
+    }
+    
+    .stats-label {
+        font-size: 0.85rem;
+    }
+    
+    .table {
+        font-size: 0.8rem;
+        border-radius: 6px;
+    }
+    
+    .table thead th {
+        padding: 8px 6px;
+        font-size: 0.8rem;
+    }
+    
+    .table tbody td {
+        padding: 8px 6px;
+        font-size: 0.8rem;
+    }
+    
+    .btn-primary,
+    .btn-success {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+        border-radius: 6px;
+    }
+    
+    .btn-sm {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+    }
+    
+    .modal-content {
+        border-radius: 10px;
+        margin: 10px;
+    }
+    
+    .modal-header {
+        border-radius: 10px 10px 0 0;
+        padding: 0.8rem;
+    }
+    
+    .modal-body {
+        padding: 0.8rem;
+    }
+    
+    .modal-footer {
+        padding: 0.8rem;
+    }
+    
+    .badge {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+        border-radius: 15px;
+    }
+    
+    .fab-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .section-title {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Make forms more mobile-friendly */
+    .form-control {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+        border-radius: 6px;
+    }
+    
+    .form-label {
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+    
+    /* Adjust container padding for mobile */
+    .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+/**
+ * Extra small mobile devices (360px and below)
+ * Optimizes for very small smartphone screens
+ */
+@media (max-width: 360px) {
+    .navbar-brand {
+        font-size: 0.9rem;
+    }
+    
+    .dashboard-card {
+        margin: 0.3rem 0;
+        border-radius: 8px;
+    }
+    
+    .card-header {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+        border-radius: 8px 8px 0 0 !important;
+    }
+    
+    .stats-card {
+        padding: 0.8rem;
+        border-radius: 8px;
+    }
+    
+    .stats-number {
+        font-size: 1.3rem;
+    }
+    
+    .stats-label {
+        font-size: 0.8rem;
+    }
+    
+    .table {
+        font-size: 0.75rem;
+    }
+    
+    .table thead th,
+    .table tbody td {
+        padding: 6px 4px;
+    }
+    
+    .btn-primary,
+    .btn-success {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .fab-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .container-fluid {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+/**
+ * Landscape orientation adjustments for mobile devices
+ * Optimizes layout when mobile device is in landscape mode
+ */
+@media (max-height: 500px) and (orientation: landscape) {
+    .navbar {
+        padding: 0.3rem 1rem;
+    }
+    
+    .dashboard-card {
+        margin-bottom: 0.5rem;
+    }
+    
+    .card-header {
+        padding: 0.6rem;
+    }
+    
+    .stats-card {
+        padding: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .stats-number {
+        font-size: 1.2rem;
+    }
+    
+    .stats-label {
+        font-size: 0.8rem;
+    }
+    
+    .modal-content {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .fab-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+        bottom: 10px;
+        right: 10px;
+    }
+}

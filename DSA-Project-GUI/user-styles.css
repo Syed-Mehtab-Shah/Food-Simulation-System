@@ -1,0 +1,875 @@
+/**
+ * =============================================================================
+ * USER DASHBOARD STYLES
+ * =============================================================================
+ * 
+ * This stylesheet contains all the styles for the user dashboard interface
+ * of the Food Delivery System. It provides an intuitive and beautiful
+ * interface for customers to browse restaurants, view menus, and place orders.
+ * 
+ * Features:
+ * - Modern glassmorphism design with backdrop blur effects
+ * - Responsive layout for all screen sizes
+ * - Interactive restaurant and menu cards
+ * - Smooth animations and transitions
+ * - CSS custom properties for consistent theming
+ * 
+ * @author Food Delivery System Team
+ * @version 1.0
+ */
+
+/* =============================================================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+   ============================================================================= */
+
+/**
+ * CSS Custom Properties for consistent theming
+ * Defines the color palette and design tokens used throughout the dashboard
+ */
+:root {
+  --primary-color: #ff6b35; /* Main brand orange */
+  --secondary-color: #f7931e; /* Secondary orange shade */
+  --accent-color: #2c3e50; /* Dark blue-gray for text */
+  --light-bg: #f8f9fa; /* Light background color */
+  --success-color: #28a745; /* Green for success states */
+  --warning-color: #ffc107; /* Yellow for warning states */
+}
+
+/* =============================================================================
+   GLOBAL STYLES
+   ============================================================================= */
+
+/**
+ * Body styling with gradient background
+ * Creates a beautiful gradient backdrop for the entire dashboard
+ */
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =============================================================================
+   NAVIGATION BAR
+   ============================================================================= */
+
+/**
+ * Navigation bar with glassmorphism effect
+ * Semi-transparent background with backdrop blur for modern appearance
+ */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * Brand logo styling
+ * Uses primary color with bold typography
+ */
+.navbar-brand {
+  font-weight: bold;
+  color: var(--primary-color) !important;
+  font-size: 1.5rem;
+}
+
+/* =============================================================================
+   MAIN CONTAINER
+   ============================================================================= */
+
+/**
+ * Main content container with glassmorphism
+ * Central container with semi-transparent background and blur effect
+ */
+.main-container {
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+/* =============================================================================
+   SEARCH SECTION
+   ============================================================================= */
+
+/**
+ * Search section with gradient background
+ * Prominent search area with brand gradient colors
+ */
+.search-section {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+/**
+ * Search input field styling
+ * Rounded input with shadow for modern appearance
+ */
+.search-input {
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * Search button styling
+ * Accent color button with hover animations
+ */
+.search-btn {
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  background: var(--accent-color);
+  border: none;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/**
+ * Search button hover effect
+ * Darker shade with lift animation
+ */
+.search-btn:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+}
+
+/* =============================================================================
+   RESTAURANT CARDS
+   ============================================================================= */
+
+/**
+ * Restaurant card component
+ * Interactive cards with hover effects for restaurant listings
+ */
+.restaurant-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+/**
+ * Restaurant card hover effect
+ * Lift animation with enhanced shadow for interactivity
+ */
+.restaurant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * Restaurant image placeholder
+ * Gradient background with centered icon for restaurant images
+ */
+.restaurant-image {
+  height: 200px;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+}
+
+/**
+ * Rating badge overlay
+ * Positioned absolutely on restaurant cards to show ratings
+ */
+.rating-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--success-color);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* =============================================================================
+   MENU ITEMS
+   ============================================================================= */
+
+/**
+ * Menu item card styling
+ * Individual menu item display with hover interactions
+ */
+.menu-item-card {
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+/**
+ * Menu item card hover effect
+ * Border color change with brand-colored shadow
+ */
+.menu-item-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
+}
+
+/**
+ * Price tag styling
+ * Prominent price display with brand colors
+ */
+.price-tag {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/**
+ * Order button styling
+ * Green button for positive order actions
+ */
+.order-btn {
+  background: var(--success-color);
+  border: none;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/**
+ * Order button hover effect
+ * Darker green with scale animation
+ */
+.order-btn:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+/* =============================================================================
+   STATISTICS AND DASHBOARD WIDGETS
+   ============================================================================= */
+
+/**
+ * Statistics card styling
+ * Gradient background for highlighting key user metrics
+ */
+.stats-card {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/**
+ * Order history card styling
+ * Left border accent with light background for order history items
+ */
+.order-history-card {
+  border-left: 4px solid var(--primary-color);
+  background: #f8f9fa;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0 10px 10px 0;
+}
+
+/* =============================================================================
+   STATUS BADGES AND INDICATORS
+   ============================================================================= */
+
+/**
+ * Base status badge styling
+ * Consistent styling for all status indicators
+ */
+.status-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/**
+ * Delivered status badge
+ * Green background for completed orders
+ */
+.status-delivered {
+  background: var(--success-color);
+  color: white;
+}
+
+/**
+ * Pending status badge
+ * Yellow background for pending orders
+ */
+.status-pending {
+  background: var(--warning-color);
+  color: #333;
+}
+
+/* =============================================================================
+   MODAL COMPONENTS
+   ============================================================================= */
+
+/**
+ * Modal content styling
+ * Rounded corners with enhanced shadow for modern appearance
+ */
+.modal-content {
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/**
+ * Modal header styling
+ * Primary color gradient matching the brand theme
+ */
+.modal-header {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  border-radius: 15px 15px 0 0;
+  border: none;
+}
+
+/**
+ * Modal body styling
+ * Consistent padding and background
+ */
+.modal-body {
+  padding: 2rem;
+}
+
+/**
+ * Modal footer styling
+ * Light background with proper spacing
+ */
+.modal-footer {
+  background: #f8f9fa;
+  border-radius: 0 0 15px 15px;
+  border: none;
+}
+
+/* =============================================================================
+   ANIMATIONS AND TRANSITIONS
+   ============================================================================= */
+
+/**
+ * Fade-in animation keyframes
+ * Smooth entrance animation for dynamic content
+ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/**
+ * Fade-in animation class
+ * Applies smooth entrance animation to elements
+ */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/**
+ * Pulse animation for loading states
+ * Subtle pulsing effect for loading indicators
+ */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/**
+ * Pulse animation class
+ * Applies pulsing effect for loading states
+ */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN - MOBILE AND TABLET OPTIMIZATIONS
+   ============================================================================= */
+
+/**
+ * Large tablets and small desktops (1024px and below)
+ * Adjusts spacing and sizing for medium screens
+ */
+@media (max-width: 1024px) {
+  .main-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .restaurant-card {
+    margin-bottom: 1.2rem;
+  }
+
+  .restaurant-image {
+    height: 180px;
+    font-size: 2.5rem;
+  }
+
+  .stats-card {
+    padding: 1.2rem;
+  }
+}
+
+/**
+ * Tablets (768px and below)
+ * Optimizes layout for tablet portrait and landscape modes
+ */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+
+  .main-container {
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 15px;
+  }
+
+  .welcome-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .welcome-section p {
+    font-size: 0.95rem;
+  }
+
+  .search-section {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .restaurant-card {
+    margin-bottom: 1rem;
+    border-radius: 12px;
+  }
+
+  .restaurant-image {
+    height: 160px;
+    font-size: 2rem;
+  }
+
+  .rating-badge {
+    padding: 0.4rem;
+    font-size: 0.5rem;
+    border-radius: 4px;
+  }
+
+  .menu-item-card {
+    padding: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .price-tag {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    border-radius: 15px;
+  }
+
+  .order-btn {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 15px;
+  }
+
+  .stats-card {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .order-history-card {
+    padding: 0.8rem;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .status-badge {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    border-radius: 12px;
+  }
+
+  .modal-content {
+    border-radius: 12px;
+  }
+
+  .modal-header {
+    border-radius: 12px 12px 0 0;
+    padding: 1rem;
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+  }
+}
+
+/**
+ * Mobile devices (480px and below)
+ * Optimizes for small smartphone screens
+ */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.3rem 0.8rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .main-container {
+    padding: 0.8rem;
+    margin: 0.3rem;
+    border-radius: 12px;
+  }
+
+  .welcome-section {
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .welcome-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .welcome-section p {
+    font-size: 0.9rem;
+  }
+
+  .search-section {
+    padding: 0.8rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .form-control {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  .btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  .restaurant-card {
+    margin-bottom: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .restaurant-image {
+    height: 140px;
+    font-size: 1.8rem;
+  }
+
+  .card-body {
+    padding: 0.8rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .card-text {
+    font-size: 0.85rem;
+  }
+
+  .rating-badge {
+    padding: 0.3rem;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    top: 8px;
+    right: 8px;
+  }
+
+  .menu-item-card {
+    padding: 0.6rem;
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+  }
+
+  .price-tag {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+    border-radius: 12px;
+  }
+
+  .order-btn {
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 12px;
+  }
+
+  .stats-card {
+    padding: 0.8rem;
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+  }
+
+  .order-history-card {
+    padding: 0.6rem;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 0.8rem;
+  }
+
+  .status-badge {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+    border-radius: 10px;
+  }
+
+  .modal-content {
+    border-radius: 10px;
+    margin: 10px;
+  }
+
+  .modal-header {
+    border-radius: 10px 10px 0 0;
+    padding: 0.8rem;
+  }
+
+  .modal-body {
+    padding: 1rem;
+  }
+
+  .modal-footer {
+    padding: 0.8rem;
+    border-radius: 0 0 10px 10px;
+  }
+
+  /* Grid adjustments for mobile */
+  .row > .col-md-4,
+  .row > .col-md-6,
+  .row > .col-md-8 {
+    margin-bottom: 0.8rem;
+  }
+}
+
+/**
+ * Extra small mobile devices (360px and below)
+ * Optimizes for very small smartphone screens
+ */
+@media (max-width: 360px) {
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .main-container {
+    padding: 0.6rem;
+    margin: 0.2rem;
+    border-radius: 10px;
+  }
+
+  .welcome-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .welcome-section p {
+    font-size: 0.85rem;
+  }
+
+  .search-section {
+    padding: 0.6rem;
+    border-radius: 8px;
+  }
+
+  .restaurant-card {
+    border-radius: 8px;
+  }
+
+  .restaurant-image {
+    height: 120px;
+    font-size: 1.5rem;
+  }
+
+  .card-body {
+    padding: 0.6rem;
+  }
+
+  .card-title {
+    font-size: 0.95rem;
+  }
+
+  .card-text {
+    font-size: 0.8rem;
+  }
+
+  .rating-badge {
+    padding: 0.25rem;
+    font-size: 0.5rem;
+    top: 6px;
+    right: 6px;
+  }
+
+  .menu-item-card {
+    padding: 0.5rem;
+  }
+
+  .price-tag {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .order-btn {
+    padding: 0.25rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .stats-card {
+    padding: 0.6rem;
+    border-radius: 8px;
+  }
+
+  .order-history-card {
+    padding: 0.5rem;
+  }
+
+  .modal-content {
+    margin: 5px;
+    border-radius: 8px;
+  }
+
+  .modal-header {
+    border-radius: 8px 8px 0 0;
+    padding: 0.6rem;
+  }
+
+  .modal-body {
+    padding: 0.8rem;
+  }
+
+  .modal-footer {
+    padding: 0.6rem;
+    border-radius: 0 0 8px 8px;
+  }
+}
+
+/**
+ * Landscape orientation adjustments for mobile devices
+ * Optimizes layout when mobile device is in landscape mode
+ */
+@media (max-height: 500px) and (orientation: landscape) {
+  .navbar {
+    padding: 0.2rem 0.8rem;
+  }
+
+  .main-container {
+    padding: 0.5rem;
+    margin: 0.2rem;
+  }
+
+  .welcome-section {
+    padding: 0.5rem 0;
+  }
+
+  .welcome-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .search-section {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .restaurant-card {
+    margin-bottom: 0.5rem;
+  }
+
+  .restaurant-image {
+    height: 100px;
+    font-size: 1.3rem;
+  }
+
+  .card-body {
+    padding: 0.5rem;
+  }
+
+  .stats-card {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-body {
+    padding: 0.8rem;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+}
+
+/* =============================================================================
+   SECTION HEADERS
+   ============================================================================= */
+
+/**
+ * Section title styling
+ * Consistent headers with bottom border accent using brand colors
+ */
+.section-title {
+  color: var(--accent-color);
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--primary-color);
+  display: inline-block;
+}

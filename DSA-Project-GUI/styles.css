@@ -1,0 +1,516 @@
+/**
+ * =============================================================================
+ * FOODPANDA PAKISTAN - MAIN LANDING PAGE STYLES
+ * =============================================================================
+ * 
+ * This stylesheet contains all the styles for the main landing page of the
+ * Food Delivery System. It includes role selection, login forms, and 
+ * beautiful gradient animations.
+ * 
+ * Features:
+ * - Responsive design for all screen sizes
+ * - Modern gradient backgrounds and glassmorphism effects
+ * - Smooth animations and transitions
+ * - Accessible form controls and buttons
+ * 
+ * @author Food Delivery System Team
+ * @version 1.0
+ */
+
+/* =============================================================================
+   GLOBAL STYLES
+   ============================================================================= */
+
+/**
+ * Global font family setting
+ * Uses Google Fonts Poppins for modern, clean typography
+ */
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =============================================================================
+   HERO SECTION
+   ============================================================================= */
+
+/**
+ * Main hero section with gradient background
+ * Creates a full-height landing area with animated background elements
+ */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/**
+ * Decorative background overlay
+ * Adds subtle animated circles using SVG for visual interest
+ */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>') no-repeat center center;
+    background-size: cover;
+    opacity: 0.3;
+}
+
+/* =============================================================================
+   LOGIN CARD COMPONENT
+   ============================================================================= */
+
+/**
+ * Main login card with glassmorphism effect
+ * Semi-transparent background with backdrop blur for modern appearance
+ */
+.login-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/**
+ * Hover effect for login card
+ * Subtle lift animation with enhanced shadow
+ */
+.login-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* =============================================================================
+   ROLE SELECTION BUTTONS
+   ============================================================================= */
+
+/**
+ * Base style for role selection buttons
+ * Modern gradient design with smooth transitions
+ */
+.role-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    border: none;
+    border-radius: 15px;
+    padding: 15px 30px;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);
+}
+
+/**
+ * Hover effect for user role button
+ * Reverses gradient and adds lift animation
+ */
+.role-btn:hover {
+    background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(238, 90, 36, 0.4);
+    color: white;
+}
+
+/**
+ * Admin role button variant
+ * Purple gradient to distinguish from user button
+ */
+.role-btn.admin-btn {
+    background: linear-gradient(135deg, #4834d4, #686de0);
+    box-shadow: 0 8px 25px rgba(72, 52, 212, 0.3);
+}
+
+/**
+ * Admin button hover effect
+ * Maintains purple theme with enhanced shadow
+ */
+.role-btn.admin-btn:hover {
+    background: linear-gradient(135deg, #686de0, #4834d4);
+    box-shadow: 0 12px 35px rgba(72, 52, 212, 0.4);
+}
+
+/* =============================================================================
+   BRANDING AND TYPOGRAPHY
+   ============================================================================= */
+
+/**
+ * Brand logo with gradient text effect
+ * Creates eye-catching title with color gradient
+ */
+.brand-logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+/* =============================================================================
+   FORM CONTROLS
+   ============================================================================= */
+
+/**
+ * Enhanced form input styling
+ * Rounded corners with smooth focus transitions
+ */
+.form-control {
+    border-radius: 12px;
+    border: 2px solid #e9ecef;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+/**
+ * Form control focus state
+ * Blue accent color matching the theme
+ */
+.form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/**
+ * Login button styling
+ * Matches the hero section gradient theme
+ */
+.btn-login {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 12px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/**
+ * Login button hover effect
+ * Reverses gradient with lift animation
+ */
+.btn-login:hover {
+    background: linear-gradient(135deg, #764ba2, #667eea);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* =============================================================================
+   DECORATIVE ANIMATIONS
+   ============================================================================= */
+
+/**
+ * Floating food icons for visual interest
+ * Positioned absolutely with floating animation
+ */
+.food-icons {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Staggered positioning and animation delays for food icons */
+.food-icons:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+.food-icons:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
+.food-icons:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; }
+.food-icons:nth-child(4) { bottom: 20%; right: 10%; animation-delay: 1s; }
+
+/**
+ * Floating animation keyframes
+ * Creates gentle up and down movement
+ */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* =============================================================================
+   ADMIN FORM SECTION
+   ============================================================================= */
+
+/**
+ * Admin login form
+ * Initially hidden, shown when admin role is selected
+ */
+.admin-form {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/**
+ * Fade-in animation for form transitions
+ * Smooth appearance when switching between forms
+ */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/**
+ * Back button styling
+ * Neutral gray color for secondary action
+ */
+.back-btn {
+    background: #6c757d;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 20px;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/**
+ * Back button hover effect
+ * Darker shade with subtle lift
+ */
+.back-btn:hover {
+    background: #5a6268;
+    transform: translateY(-1px);
+    color: white;
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN - MOBILE AND TABLET OPTIMIZATIONS
+   ============================================================================= */
+
+/**
+ * Large tablets and small desktops (1024px and below)
+ * Adjusts spacing and sizing for medium screens
+ */
+@media (max-width: 1024px) {
+    .hero-section {
+        padding: 20px 0;
+    }
+    
+    .login-card {
+        margin: 20px;
+        padding: 30px !important;
+    }
+    
+    .brand-logo {
+        font-size: 2rem;
+    }
+    
+    .food-icons {
+        font-size: 1.5rem;
+    }
+}
+
+/**
+ * Tablets (768px and below)
+ * Optimizes layout for tablet portrait and landscape modes
+ */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 100vh;
+        padding: 15px;
+    }
+    
+    .login-card {
+        margin: 15px;
+        padding: 25px !important;
+        border-radius: 15px;
+    }
+    
+    .brand-logo {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .role-btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+    }
+    
+    .form-control {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+    }
+    
+    .btn-login {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+    
+    .back-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Hide some decorative elements on tablets */
+    .food-icons:nth-child(3),
+    .food-icons:nth-child(4) {
+        display: none;
+    }
+    
+    .food-icons {
+        font-size: 1.2rem;
+        opacity: 0.08;
+    }
+}
+
+/**
+ * Mobile devices (480px and below)
+ * Optimizes for small smartphone screens
+ */
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 10px;
+        min-height: 100vh;
+    }
+    
+    .login-card {
+        margin: 10px;
+        padding: 20px !important;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .brand-logo {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .role-btn {
+        padding: 14px 20px;
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+        border-radius: 8px;
+    }
+    
+    .form-control {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+    
+    .btn-login {
+        padding: 14px 25px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+    }
+    
+    .back-btn {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+        border-radius: 8px;
+    }
+    
+    /* Hide all decorative food icons on mobile */
+    .food-icons {
+        display: none;
+    }
+    
+    /* Adjust text sizes for mobile */
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+    
+    .hero-section small {
+        font-size: 0.8rem;
+    }
+    
+    /* Ensure proper spacing on mobile */
+    .mb-3 {
+        margin-bottom: 1rem !important;
+    }
+    
+    .mb-4 {
+        margin-bottom: 1.2rem !important;
+    }
+}
+
+/**
+ * Extra small mobile devices (360px and below)
+ * Optimizes for very small smartphone screens
+ */
+@media (max-width: 360px) {
+    .login-card {
+        margin: 5px;
+        padding: 15px !important;
+    }
+    
+    .brand-logo {
+        font-size: 1.3rem;
+    }
+    
+    .role-btn {
+        padding: 12px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .form-control {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .btn-login {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+    }
+    
+    .back-btn {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+}
+
+/**
+ * Landscape orientation adjustments for mobile devices
+ * Optimizes layout when mobile device is in landscape mode
+ */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 100vh;
+        padding: 5px;
+    }
+    
+    .login-card {
+        padding: 15px !important;
+        margin: 5px;
+    }
+    
+    .brand-logo {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+    
+    .role-btn {
+        padding: 8px 15px;
+        margin-bottom: 8px;
+    }
+    
+    .form-control {
+        padding: 8px 12px;
+        margin-bottom: 10px;
+    }
+    
+    .btn-login {
+        padding: 10px 20px;
+    }
+    
+    .back-btn {
+        padding: 8px 15px;
+    }
+    
+    /* Reduce vertical spacing in landscape */
+    .mb-3 {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .mb-4 {
+        margin-bottom: 0.8rem !important;
+    }
+}
